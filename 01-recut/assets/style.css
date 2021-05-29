@@ -1362,8 +1362,14 @@ video {
 	max-width: 42rem !important;
 }
 
+/* This rule overwrites the max rule of 100% for img. So remove it to solve scrollburglar
 .max-w-md {
-	max-width: 28rem !important;
+	max-width: 100%;
+} 
+But a better solution is to use min. This way, when as long as 28 rem is smaller than 100% of the container, 28rem is used, and the moment
+it is larger than 100%, the image width is limited to 100%. */
+.max-w-md {
+	max-width: min(28rem, 100%)
 }
 
 .max-w-80 {
