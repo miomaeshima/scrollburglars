@@ -160,3 +160,9 @@ a {
 .heading-content {
   position: relative;
 }
+/*use media query to cut off the parallelogram only when the screen is narrow*/
+@media (max-width: 850px){
+  main{
+    overflow: hidden;
+  }
+}
