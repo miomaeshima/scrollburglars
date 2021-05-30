@@ -112,6 +112,8 @@ a {
 .social-wrapper {
   position: sticky;
   top: 0px;
+  /*to revert the pointer-events because it was set to none for the overlay (.centered-stuff.floating)*/
+  pointer-events: auto;
 }
 
 .social-icons {
@@ -159,4 +161,28 @@ a {
 
 .heading-content {
   position: relative;
+}
+
+/*to overlay this on top of the article layer (centered-stuff:not(.floating))*/
+.centered-stuff.floating{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* to allow click on article*/
+  pointer-events: none;
+}
+
+/*to allow the overlay with absolute positioning*/
+main{
+  position:relative;
+}
+
+/*to give this a hight based on the parent (main) The main is getting height from article*/
+.centered-stuff.floating .max-width-wrapper{
+  height: 100%;
+}
+
+/*to cut off the parallelogram for narowwer screen*/
+.centered-stuff:not(.floating){
+  overflow:hidden;  
 }
